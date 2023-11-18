@@ -21,7 +21,10 @@ int main()
 		mass[i] = new int[col];
 	}
 
+
+
 	fill_mass(mass, row, col);
+	output_mass(mass, row, col);
 
 
 
