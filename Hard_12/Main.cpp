@@ -15,24 +15,39 @@ int main()
 	cout << "число столбецов: ";
 	cin >> col;
 
-	int** mass = new int*[row];
+	//------------------------- Создание массива
+	int** A = new int*[row];
 	for (int i = 0; i < row; i++)
 	{
-		mass[i] = new int[col];
+		A[i] = new int[col];
 	}
 
+	//------------------------- Манипуляции
 
+	fill_mass(A, row, col);                // заполнить
+	output_mass(A, row, col);              // вывести
 
-	fill_mass(mass, row, col);
-	output_mass(mass, row, col);
+	int BC_size = 0;
+	if (row <= col) BC_size = row;          // вычисляем размер диагоналей
+	else BC_size = col;
 
+	int* B = new int[BC_size];
+	int* C = new int[BC_size];
+	fill_B(A, B, BC_size);                // заполняем B
+	fill_C(A, B, BC_size);                // заполняем С
 
+	out_ABC(A, B, C, row, col, BC_size);  // выводим колонками массивы
 
+	//------------------------- Удаление массива
 	for (int i = 0; i < row; i++)
 	{
-		delete[] mass[i];
+		delete[] A[i];
 	}
-	delete[] mass;
+	delete[] A;
+
+	delete[] B;
+
+	delete[] C;
 
 	system("pause");
 	return 0;

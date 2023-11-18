@@ -1,3 +1,6 @@
 #pragma once
-void fill_mass(int**&arr, int r, int c);     // Заполнение массива
-void output_mass(int** arr, int r, int c);   // Вывод массива
+void fill_mass(int**&arr, int r, int c);                 // Заполнение массива
+void output_mass(int** arr, int r, int c);               // Вывод массива
+void fill_B(int** arr, int* B, int n);                   // заполняем массив B диагональю (главной)
+void fill_C(int** arr, int* C, int n);                   // заполняем массив С второй диагональю
+void out_ABC(int** arr, int* B, int*C, int r, int c, int s);
