@@ -34,7 +34,7 @@ int main()
 	int* B = new int[BC_size];
 	int* C = new int[BC_size];
 	fill_B(A, B, BC_size);                // заполняем B
-	fill_C(A, B, BC_size);                // заполняем С
+	fill_C(A, C, BC_size);                // заполняем С
 
 	out_ABC(A, B, C, row, col, BC_size);  // выводим колонками массивы
 
